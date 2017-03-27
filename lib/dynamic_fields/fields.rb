@@ -43,7 +43,7 @@ module DynamicFields
       def real_fields
         return [] unless table_exists?
         columns.map do |c|
-          next if c.primary == true
+          next if primary_key == c.name
           ::DynamicFields::Field.new(c.name, :type => c.type, :default => c.default)
         end.compact
       end
