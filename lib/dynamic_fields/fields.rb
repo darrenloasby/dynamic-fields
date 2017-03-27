@@ -4,10 +4,10 @@ module DynamicFields
     
     included do
       # Set up the class attributes that must be available to all subclasses.
-      class_inheritable_accessor :fields
+      class_attribute :fields
       self.fields = []
       
-      class_inheritable_accessor :indices
+      class_attribute :indices
       self.indices = []
       
       
